@@ -25,10 +25,8 @@ public class DeathEvent implements Listener {
             Location loc = killer.getLocation();
 
             //spawn cops in
-            for (int i = 0; i < 3; i++) {
-                PigZombie cop = (PigZombie) loc.getWorld().spawnEntity(loc, EntityType.PIG_ZOMBIE);
-                cop.setTarget(killer);
-            }
+            CopSpawn spawn = new CopSpawn();
+            spawn.copSpawner(killer, loc);
 
         }
     }
