@@ -1,13 +1,21 @@
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class CopsMain extends JavaPlugin {
+
+
     @Override
     public void onEnable() {
-        getLogger().info("onEnable is called!");
+        saveDefaultConfig();
+        getLogger().info("NightenMC Cops enabled.");
         getServer().getPluginManager().registerEvents(new DeathEvent(this), this);
+        this.getCommand("acops").setExecutor(new AdminCommands(this));
+
     }
     @Override
     public void onDisable() {
-        getLogger().info("onDisable is called!");
+        getLogger().info("NightenMC Cops disabled.");
     }
+
+
 }
+

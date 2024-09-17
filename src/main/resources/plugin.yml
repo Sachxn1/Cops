@@ -1,3 +1,7 @@
 name: Cops
 version: 1.0
 main: CopsMain
+commands:
+  acops:
+    description: Admin commands for cops
+    usage: /<command>

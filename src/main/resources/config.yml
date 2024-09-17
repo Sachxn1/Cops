@@ -1,0 +1,28 @@
+#admin messages
+admin-msgs:
+  admin-undefined:
+    - "&7[&9Cops&7] command list"
+    - "&7/acops help - shows this page"
+    - "&7/acops clearwanted [playername] - clears a targets wanted level"
+    - "&7/acops wantedincrease [playername] - increases a target wanted level by 1"
+    - "&7/acops saveloadout - sets your current inventory to be used for cop mode"
+    - "&7/acops reload - reloads all configurations."
+  admin-clear-wanted: "&7[&9Cops&7] You have cleared %player% wanted level"
+  admin-increase-wanted: "&7[&9Cops&7] You have increased %player% wanted level by 1"
+  admin-save-loadout: "&7[&9Cops&7] You have set your current inventory to be used for cop mode"
+  admin-reload: "&7[&9Cops&7] You have reloaded the config."
+  no-perms: "&7[&9Cops&7] You do not have permission to execute this command."
+
+#player messages
+player-msgs:
+  player-undefined:
+    - "&7[&9Cops&7] command list"
+    - "&7/cops help - shows this page."
+    - "&7/cops on - turns cop mode on."
+    - "&7/cops off - turns cop mode off."
+    - "&7/cops wanted - brings up a list of wanted criminals."
+    - "&7/cops select [playername] - if you are in cop mode, then this will point your compass in their direction."
+    - "&7/cops clear - allows you to clear your wanted level for a price."
+  player-chase: "&7[&9Cops&7] Your wanted level has increased by 1. Get running, the cops are after you!"
+  player-safe: "&7[&9Cops&7] You got away this time."
+  clear-wanted: "&7[&9Cops&7] &7You have cleared your wanted level for %price%."
