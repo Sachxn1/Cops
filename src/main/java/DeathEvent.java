@@ -8,10 +8,15 @@ import org.bukkit.plugin.java.JavaPlugin;
 public class DeathEvent implements Listener {
 
     private final JavaPlugin plugin;
+    private MongoDBHandler dbHandler;
+    private WantedHandler wanted;
+    private CopSpawn spawn = new CopSpawn();
 
     // Constructor to pass the plugin instance (optional, but useful for accessing plugin methods if needed)
-    public DeathEvent(JavaPlugin plugin) {
+    public DeathEvent(CopsMain plugin) {
         this.plugin = plugin;
+        dbHandler = new MongoDBHandler(plugin.getMongoDatabase());
+        wanted = new WantedHandler(dbHandler);
     }
 
     @EventHandler
@@ -20,11 +25,14 @@ public class DeathEvent implements Listener {
         // Custom code for when the player dies
         if (event.getEntity().getKiller() instanceof Player) {
             Player killer = event.getEntity().getKiller();
-            Location loc = killer.getLocation();
+            Player victim = event.getEntity();
+            Location victimLoc = event.getEntity().getLocation();
 
-            //spawn cops in
-            CopSpawn spawn = new CopSpawn();
-            spawn.copSpawner(killer, loc);
+            //spawn cops in at victims location
+            spawn.copSpawner(killer, victimLoc);
+
+            //wanted level logic
+            wanted.deathWanted(victim, killer);
 
         }
     }

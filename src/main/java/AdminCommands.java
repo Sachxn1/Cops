@@ -61,7 +61,7 @@ public class AdminCommands implements CommandExecutor {
                     }
                 }
 
-                //save loadour
+                //save loadout
                 else if (args[0].equalsIgnoreCase("saveloadout")) {
                     sender.sendMessage(ChatColor.translateAlternateColorCodes('&', plugin.getConfig().getString("admin-msgs.admin-save-loadout")));
                     //add logic to save loadout here

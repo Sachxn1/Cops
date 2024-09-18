@@ -1,5 +1,7 @@
 CopsMain.class
 CopSpawn$1.class
+WantedHandler.class
 CopSpawn.class
 DeathEvent.class
+MongoDBHandler.class
 AdminCommands.class

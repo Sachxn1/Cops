@@ -1,3 +1,8 @@
+#mongo connector
+mongodb:
+  connection-string: "mongodb://localhost:27017"  # Replace with your MongoDB URI
+  database: cops
+
 #admin messages
 admin-msgs:
   admin-undefined:
